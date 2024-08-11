@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: lightgreen;
+            color: darkblue;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: Green;
+        }
+
+        .nav-links {
+            list-style-type: none;
+        }
+
+        .nav-links li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: blue;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: darkblue;
+        }
+        .hero {
+            background-image: url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-text {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero-text h1 {
+            color:#e6005c;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            color:yellow;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        /* About & Skills section */
+        #about-skills {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 80px 20px;
+        }
+
+        #about {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #about img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+        }
+
+        #skills {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #skills h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        #skills ul {
+            list-style-type: none;
+        }
+
+        #skills li {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Projects section */
+        #projects {
+            padding: 80px 20px;
+        }
+
+        #projects h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .project {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .project img {
+            max-width: 300px;
+            margin-right: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-info h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Contact section */
+        #contact {
+            background-color: #f4f4f4;
+            padding: 80px 20px;
+        }
+
+        #contact h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #contact p {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .nav-links li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1.2rem;
+            }
+
+            #about-skills {
+                flex-direction: column;
+            }
+
+            .project {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">Diwakaran R</h1>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <div class="container">
+                <div class="hero-text">
+                    <h1>Diwakaran R</h1>
+                    <p>Frontend Developer & AI/ML Developer</p>
+                    <a href="#projects" class="btn">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about-skills">
+        <div id="about">
+            <h2>About Me</h2>
+            <img src=" https://i.postimg.cc/WthCqsyL/IMG-20240730-192123.jpg" alt="Diwakaran R">
+            <p>I am a motivated and adaptable person, skilled in Artificial Intelligence, Machine Learning, and front-end development.</p>
+        </div>
+
+        <div id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Python at CISCO : Learned Python essentials and earned verified badge</li>
+                <li>Java at EDUREKA : Learned Basics of Java programming </li>
+                <li>AI Foundation at OCI : Learned Artificial Intelligence fundamental concepts</li>
+                <li>Machine Learning with Python at IBM SKILLS BUILD : Learned Machine learning basics and machine learning algorithms</li>
+                <li>Introduction to MS Excel at Great Learning : Learned Ms Excel for beginners, Introduction level </li>
+                <li> Web Development at Sololearn : Learned Basics of Html, Css and Javascript with practical knowledge</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project">
+                <div class="project-info">
+                    <h3>Handwritten Digit Prediction</h3>
+                    <p>I worked on a handwritten digit prediction project using sentiment analysis at YBI Foundation as part of my internship. I explored the dataset, visualized sample images, preprocessed the data for training, and split the data into training</p>
+                    <h3>Personal Portfolio website</h3>
+                    <p>This project involves the creation of a personal portfolio website using HTML and CSS. The website showcases a clean, professional design, emphasizing the user's skills, projects, and achievements.
+                    </p>
+<section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Reach out to discuss potential projects or collaborations.</p>
+            <form action="mailto:youremail: karandiwa133@gmail.com" method="POST" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name">
+                <input type="email" name="email" placeholder=" @gmail.com">
+                <textarea name="message" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Diwakaran R. All rights reserved.</p>
+        </div>
+    </footer>
